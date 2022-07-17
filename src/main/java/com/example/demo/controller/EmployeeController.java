@@ -4,7 +4,6 @@ package com.example.demo.controller;
 import com.example.demo.dto.EmployeeDTO;
 import com.example.demo.entity.Employee;
 import com.example.demo.facade.EmployeeFacade;
-import com.example.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,4 +41,5 @@ public class EmployeeController {
     }
 
     //add APIs for update and delete data in db
+    //try with @RequestParam where value come with query param of url
 }
