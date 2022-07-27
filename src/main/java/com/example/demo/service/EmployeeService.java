@@ -16,13 +16,13 @@ import java.util.List;
 public class EmployeeService {
 
     @Autowired
-    EmployeeRepository repository;
+    EmployeeRepository employeeRepository;
 
     @Autowired
     DepartmentRepository departmentRepository;
 
     public List<EmployeeDTO> getEmployees() {
-        List<Employee> employees = repository.findAll();
+        List<Employee> employees = employeeRepository.findAll();
         List<EmployeeDTO> employeeDTOList = new ArrayList<>();
 
         for (Employee employee : employees) {
@@ -43,7 +43,7 @@ public class EmployeeService {
     }
 
     public EmployeeDTO getName(Long id) {
-        Employee employee = repository.getById(id);
+        Employee employee = employeeRepository.findById(id).get();
         Department department = employee.getDepartment();
 
         DepartmentDTO departmentDTO = new DepartmentDTO(department.getId(), department.getName());
@@ -61,6 +61,6 @@ public class EmployeeService {
         Department department = departmentRepository.findById(employeeDTO.getDepartmentDTO().getId()).get();
 
         employee.setDepartment(department);
-        repository.save(employee);
+        employeeRepository.save(employee);
     }
 }
