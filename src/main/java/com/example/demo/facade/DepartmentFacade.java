@@ -5,6 +5,8 @@ import com.example.demo.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class DepartmentFacade {
 
@@ -17,5 +19,9 @@ public class DepartmentFacade {
 
     public void saveDepartment(DepartmentDTO departmentDTO){
         departmentService.saveDepartment(departmentDTO);
+    }
+
+    public List<DepartmentDTO> getDepartments() {
+        return departmentService.getDepartments();
     }
 }

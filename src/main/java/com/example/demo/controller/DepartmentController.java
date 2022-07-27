@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/department")
 public class DepartmentController {
@@ -22,6 +24,11 @@ public class DepartmentController {
     @GetMapping("/{id}")
     public DepartmentDTO getDepartmentById(@PathVariable("id") Long id){
         return departmentFacade.getDepartmentById(id);
+    }
+
+    @GetMapping("/")
+    public List<DepartmentDTO> getDepartments(){
+        return departmentFacade.getDepartments();
     }
 
     @PostMapping("/")

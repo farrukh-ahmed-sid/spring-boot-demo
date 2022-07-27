@@ -36,4 +36,22 @@ public class DepartmentService {
         return new DepartmentDTO(department.getId(), department.getName(), employeeDTOs);
     }
 
+    public List<DepartmentDTO> getDepartments() {
+        List<Department> departments = departmentRepository.findAll();
+        List<DepartmentDTO> departmentDTOS = new ArrayList<>();
+
+        for(Department department : departments){
+
+            List<EmployeeDTO> employeeDTOs = new ArrayList<>();
+
+            for(Employee employee : department.getEmployees()){
+                EmployeeDTO employeeDTO = new EmployeeDTO(employee.getId(), employee.getName(), employee.getAge());
+                employeeDTOs.add(employeeDTO);
+            }
+
+            DepartmentDTO departmentDTO = new DepartmentDTO(department.getId(), department.getName(), employeeDTOs);
+            departmentDTOS.add(departmentDTO);
+        }
+        return departmentDTOS;
+    }
 }
