@@ -5,16 +5,27 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class EmployeeDTO {
 
-    private Integer id;
+    private Long id;
     private String name;
 
     private Integer age;
 
-    public Integer getId() {
+    private DepartmentDTO departmentDTO;
+
+    public EmployeeDTO(){}
+
+    public EmployeeDTO(Long id, String name, Integer age, DepartmentDTO departmentDTO) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.departmentDTO = departmentDTO;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -34,5 +45,12 @@ public class EmployeeDTO {
         this.age = age;
     }
 
+    public DepartmentDTO getDepartmentDTO() {
+        return departmentDTO;
+    }
+
+    public void setDepartmentDTO(DepartmentDTO departmentDTO) {
+        this.departmentDTO = departmentDTO;
+    }
 }
 

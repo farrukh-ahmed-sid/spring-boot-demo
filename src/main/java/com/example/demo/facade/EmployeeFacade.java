@@ -1,7 +1,6 @@
 package com.example.demo.facade;
 
 import com.example.demo.dto.EmployeeDTO;
-import com.example.demo.entity.Employee;
 import com.example.demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,7 +17,7 @@ public class EmployeeFacade {
         return employeeService.getEmployees();
     }
 
-    public Employee getName(Integer id) {
+    public EmployeeDTO getName(Long id) {
         return employeeService.getName(id);
     }
 
