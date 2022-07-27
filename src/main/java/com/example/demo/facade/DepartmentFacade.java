@@ -11,6 +11,10 @@ public class DepartmentFacade {
     @Autowired
     private DepartmentService departmentService;
 
+    public DepartmentDTO getDepartmentById(Long id){
+        return departmentService.getDepartmentById(id);
+    }
+
     public void saveDepartment(DepartmentDTO departmentDTO){
         departmentService.saveDepartment(departmentDTO);
     }

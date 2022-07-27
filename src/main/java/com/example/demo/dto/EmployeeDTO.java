@@ -21,6 +21,12 @@ public class EmployeeDTO {
         this.departmentDTO = departmentDTO;
     }
 
+    public EmployeeDTO(Long id, String name, Integer age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
     public Long getId() {
         return id;
     }
