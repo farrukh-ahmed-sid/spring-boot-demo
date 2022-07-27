@@ -14,6 +14,10 @@ public class EmployeeDTO {
 
     public EmployeeDTO(){}
 
+    public EmployeeDTO(String name) {
+        this.name = name;
+    }
+
     public EmployeeDTO(Long id, String name, Integer age, DepartmentDTO departmentDTO) {
         this.id = id;
         this.name = name;
