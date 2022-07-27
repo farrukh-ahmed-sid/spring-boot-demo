@@ -30,9 +30,9 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     //@RequestMapping(method = RequestMethod.GET, path = "/")
-    public EmployeeDTO getTest(@PathVariable("id") Long id) {
+    public EmployeeDTO getEmployeeById(@PathVariable("id") Long id) {
 
-        return employeeFacade.getName(id);
+        return employeeFacade.getEmployeeById(id);
     }
 
     @PostMapping("/")

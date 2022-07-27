@@ -42,7 +42,7 @@ public class EmployeeService {
         return employeeDTOList;
     }
 
-    public EmployeeDTO getName(Long id) {
+    public EmployeeDTO getEmployeeById(Long id) {
         Employee employee = employeeRepository.findById(id).get();
         Department department = employee.getDepartment();
 

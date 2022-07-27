@@ -17,8 +17,8 @@ public class EmployeeFacade {
         return employeeService.getEmployees();
     }
 
-    public EmployeeDTO getName(Long id) {
-        return employeeService.getName(id);
+    public EmployeeDTO getEmployeeById(Long id) {
+        return employeeService.getEmployeeById(id);
     }
 
     public void saveEmployee(EmployeeDTO employeeDTO) {
