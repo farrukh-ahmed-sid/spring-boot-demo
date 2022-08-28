@@ -1,3 +1,3 @@
-# demo
+# spring boot demo
 
-office database can be found in resource folder. Download and import it.
+database "Office" can be found in resource folder. Download and import it.
